@@ -10,6 +10,10 @@ class AppFonts {
     fontFamily: 'PretendardRegular',
     color: AppColors.black,
   );
+  static const subcontent = TextStyle(
+    fontFamily: 'PretendardRegular',
+    color: AppColors.grey,
+  );
 
   //TODO: 필요한 폰트 추가
 }

@@ -70,19 +70,23 @@ class HomeScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment
                       .spaceBetween, //children 내부 위젯들 사이 간격 띄우기
                   children: [
-                    Column(
-                      // UI를 보면 '개강 푸드 뭐먹음?'과 '음식 공유하면 파티가 열려요'가 붙어있고 참여하기가 따로 띄워져야 하므로 앞에 두개 column으로 묶어 한 위젯으로 만들어 준 것!
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                    Row(
                       children: [
-                        Text(
-                          '개강 푸드 뭐먹음?',
-                          style: AppFonts.title.copyWith(fontSize: 15),
+                        Column(
+                          // UI를 보면 '개강 푸드 뭐먹음?'과 '음식 공유하면 파티가 열려요'가 붙어있고 참여하기가 따로 띄워져야 하므로 앞에 두개 column으로 묶어 한 위젯으로 만들어 준 것!
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              '개강 푸드 뭐먹음?',
+                              style: AppFonts.title.copyWith(fontSize: 15),
+                            ),
+                            Text('음식 공유하면 파티가 열려요🎉',
+                                style: AppFonts.content.copyWith(
+                                  color: AppColors.grey,
+                                  fontSize: 12,
+                                )),
+                          ],
                         ),
-                        Text('음식 공유하면 파티가 열려요🎉',
-                            style: AppFonts.content.copyWith(
-                              color: AppColors.grey,
-                              fontSize: 12,
-                            )),
                       ],
                     ),
                     Row(
@@ -121,11 +125,186 @@ class HomeScreen extends StatelessWidget {
                       icon: Icons.bus_alert,
                       text: '셔틀버스',
                     ),
+                    IconWithTextWidget(
+                      icon: Icons.computer,
+                      text: '사이버\n캠퍼스',
+                    ),
+                    IconWithTextWidget(
+                      icon: Icons.alarm_on,
+                      text: '학과\n공지사항',
+                    ),
                   ],
                 ),
               ),
 
               //TODO: 나머지 UI 코드 작성
+              Container(
+                margin: const EdgeInsets.only(bottom: 10, right: 10, top: 7),
+                padding: const EdgeInsets.fromLTRB(10, 10, 0, 10),
+                width: 450,
+                height: 80,
+                decoration: BoxDecoration(
+                    color: Colors.greenAccent.shade100,
+                    borderRadius: BorderRadius.circular(15), //모서리 둥글게
+                    border: Border.all(
+                      color: const Color(0xffF91F15).withOpacity(0.1),
+                    )),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment
+                      .spaceBetween, //children 내부 위젯들 사이 간격 띄우기
+                  children: [
+                    Row(
+                      children: [
+                        Row(
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  '우리 이제 밤샘 과제는 그만하자',
+                                  style: AppFonts.title.copyWith(fontSize: 15),
+                                ),
+                                Text('주제만 넣으면 10분 만에 과제 완성!',
+                                    style: AppFonts.content.copyWith(
+                                      color: Colors.greenAccent.shade700,
+                                      fontSize: 12,
+                                )),
+                              ],
+                            ),
+                            SizedBox(width: 30),
+                            Container(
+                              width: 155,
+                              height: 55,
+                              child: Image.asset(
+                                AppImages.cat,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 30),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Text(
+                        '즐겨찾는 게시판',
+                        style: AppFonts.title.copyWith(fontSize: 20),
+                      ),
+                      SizedBox(width: 210),
+                      Text(
+                        '더 보기 >',
+                        style: AppFonts.subcontent.copyWith(fontSize: 15),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height:10),
+                  Container(
+                    margin: const EdgeInsets.only(bottom: 10, right: 10, top: 7),
+                    padding: const EdgeInsets.fromLTRB(10, 10, 0, 10),
+                    width: 450,
+                    height: 400,
+                    decoration: BoxDecoration(
+                        color: Colors.white12,
+                        borderRadius: BorderRadius.circular(15), //모서리 둥글게
+                        border: Border.all(
+                          color: const Color(0xffF91F15).withOpacity(0.1),
+                        )),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment
+                          .spaceBetween, //children 내부 위젯들 사이 간격 띄우기
+                      children: [
+                        Row(
+                          children: [
+                            Row(
+                              children: [
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Row(
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          '비밀게시판',
+                                          style: AppFonts.title.copyWith(fontSize: 15),
+                                        ),
+                                        SizedBox(width: 20),
+                                        Text(
+                                          '어쩌고 저쩌고',
+                                          style: AppFonts.content.copyWith(fontSize: 15),
+                                        ),
+
+                                      ],
+                                    ),
+                                    SizedBox(height: 10),
+                                    Row(
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          '질문게시판',
+                                          style: AppFonts.title.copyWith(fontSize: 15),
+                                        ),
+                                        SizedBox(width: 20),
+                                        Text(
+                                          '어쩌고 저쩌고',
+                                          style: AppFonts.content.copyWith(fontSize: 15),
+                                        ),
+
+                                      ],
+                                    ),
+                                    SizedBox(height: 10),
+                                    Row(
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          '정보게시판',
+                                          style: AppFonts.title.copyWith(fontSize: 15),
+                                        ),
+                                        SizedBox(width: 20),
+                                        Text(
+                                          '어쩌고 저쩌고',
+                                          style: AppFonts.content.copyWith(fontSize: 15),
+                                        ),
+
+                                      ],
+                                    ),
+                                    SizedBox(height: 10),
+                                    Row(
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          '벗들의 맛집',
+                                          style: AppFonts.title.copyWith(fontSize: 15),
+                                        ),
+                                        SizedBox(width: 20),
+                                        Text(
+                                          '어쩌고 저쩌고',
+                                          style: AppFonts.content.copyWith(fontSize: 15),
+                                        ),
+
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+
+
             ],
           ),
         ),
