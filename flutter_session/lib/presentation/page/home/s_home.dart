@@ -24,12 +24,6 @@ class HomeScreen extends StatelessWidget {
           ),
           actions: [
             SvgPicture.asset(
-              //svg파일 (pub.dev에서 패키지 다운받아옴)
-              AppIcons.search,
-              width: 40,
-              height: 40,
-            ),
-            SvgPicture.asset(
               AppIcons.alarm,
               width: 40,
               height: 40,
