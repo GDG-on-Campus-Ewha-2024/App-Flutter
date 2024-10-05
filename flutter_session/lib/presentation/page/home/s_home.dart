@@ -15,7 +15,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          //TODO: appbar 배경 색상 변경
+        backgroundColor: AppColors.background,
           leading: Padding(
             padding: const EdgeInsets.only(left: 15), //로고와 왼쪽 화면 사이 간격 띄우기 위함
             child: Image.asset(
@@ -80,7 +80,7 @@ class HomeScreen extends StatelessWidget {
                         ),
                         Text('음식 공유하면 파티가 열려요🎉',
                             style: AppFonts.content.copyWith(
-                              color: AppColors.grey,
+                              color: AppColors.darkgrey,
                               fontSize: 12,
                             )),
                       ],
@@ -90,7 +90,7 @@ class HomeScreen extends StatelessWidget {
                         Text(
                           '참여하기',
                           style: AppFonts.title
-                              .copyWith(color: AppColors.grey, fontSize: 13),
+                              .copyWith(color: AppColors.darkgrey, fontSize: 13),
                         ),
                         const Icon(Icons.arrow_forward_ios_rounded,
                             color: Color(0xffA6A6A6), size: 12)
@@ -104,7 +104,6 @@ class HomeScreen extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    //TODO: 위젯 더 추가
                     IconWithTextWidget(
                       icon: Icons.school_rounded,
                       text: '학교\n홈',
@@ -114,18 +113,129 @@ class HomeScreen extends StatelessWidget {
                       text: '열람실\n현황',
                     ),
                     IconWithTextWidget(
-                      icon: Icons.computer,
+                      icon: Icons.crisis_alert_outlined,
                       text: '포탈',
                     ),
                     IconWithTextWidget(
                       icon: Icons.bus_alert,
                       text: '셔틀버스',
                     ),
+                    IconWithTextWidget(
+                      icon: Icons.computer,
+                      text: '사이버\n캠퍼스',
+                    ),
+                    IconWithTextWidget(
+                      icon: Icons.alarm,
+                      text: '학사\n공지',
+                    ),
                   ],
                 ),
               ),
 
-              //TODO: 나머지 UI 코드 작성
+              Padding(
+                padding: const EdgeInsets.only(left:20, right:20, bottom:30),
+                child: Image.asset(AppImages.header),
+              ),
+
+              Row(
+                children: [
+                  Text(
+                    '즐겨찾는 게시판 ',
+                    style: AppFonts.title.copyWith(fontSize: 20, color: AppColors.black),
+
+                  ),
+
+                  wEmptyBox(160),
+
+                  Text(
+                    '더 보기 ',
+                    style: AppFonts.content.copyWith(fontSize: 13, color: AppColors.darkgrey)
+                    ,
+                  ),
+                  const Icon(Icons.arrow_forward_ios_rounded,
+                            color: AppColors.darkgrey, size: 13)
+                ],
+
+              ),
+
+              Container(
+                margin: const EdgeInsets.only(bottom: 10, top: 10),
+                padding: const EdgeInsets.only(left:15),
+                width: 400,
+                height: 200,
+                decoration: BoxDecoration(
+                  color: AppColors.white,
+                  borderRadius: BorderRadius.circular(15),
+                  border: Border.all(color:AppColors.darkgrey.withOpacity(0.5))
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Row(
+                      children: [
+                        Text(
+                          '비밀게시판',
+                          style: AppFonts.content.copyWith(fontSize: 14, color: AppColors.darkgrey)
+                          ),
+                          
+                          wEmptyBox(20),
+                        Text(
+                          '비밀게시판 내용',
+                          style: AppFonts.content.copyWith(fontSize: 12, color: AppColors.grey),
+                        )
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          '질문게시판',
+                          style: AppFonts.content.copyWith(fontSize: 14, color: AppColors.darkgrey)
+                          ),
+                          
+                          wEmptyBox(20),
+                        Text(
+                          '질문게시판 내용',
+                          style: AppFonts.content.copyWith(fontSize: 12, color: AppColors.grey),
+                        )
+                          
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          '정보게시판',
+                          style: AppFonts.content.copyWith(fontSize: 14, color: AppColors.darkgrey)
+                          ),
+                          
+                          wEmptyBox(20),
+                        Text(
+                          '정보게시판 내용',
+                          style: AppFonts.content.copyWith(fontSize: 12, color: AppColors.grey),
+                        )
+                          
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          '벗들의맛집',
+                          style: AppFonts.content.copyWith(fontSize: 14, color: AppColors.darkgrey)
+                          ),
+                          
+                          wEmptyBox(20),
+                        Text(
+                          '벗들의맛집 내용',
+                          style: AppFonts.content.copyWith(fontSize: 12, color: AppColors.grey),
+                        )
+                          
+                      ],
+                    ),
+                    
+                  ],
+                ),
+              )
+
             ],
           ),
         ),

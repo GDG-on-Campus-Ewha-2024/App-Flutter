@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         useMaterial3: true,
+        scaffoldBackgroundColor: AppColors.background
         //TODO: 앱 배경 화면 설정
       ),
       home: const HomeScreen(),
